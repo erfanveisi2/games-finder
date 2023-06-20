@@ -21,7 +21,18 @@ class App extends Component <any , any>{
   render(){
     return(
       <div className="App">
-        
+        {
+          this.state.games.map((platform:any)=>{
+            return <div>
+                <h1>platform:{platform.name}</h1>
+                {
+                  platform.games.map((game:any)=>{
+                    return <p>{game.name}</p>
+                  })
+                }
+            </div>
+          })
+        }
       </div>
     )
   }
