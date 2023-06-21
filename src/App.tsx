@@ -8,21 +8,34 @@ class App extends Component <any , any>{
     super(arguments)
 
     this.state={
-      games:[]
+      games:[],
+      searchField:''
     }
   }
 
   componentDidMount(): void {
     fetch('https://api.rawg.io/api/platforms?key=660565b53b394a18b4d0769a3b527398')
     .then(response=>response.json())
-    .then(response=>this.setState(()=> {return {games:response.results}} ,()=>{console.log(this.state.games)}))
+    .then(response=>this.setState(()=> {return {games:response.results}}))
   }
 
   render(){
+
+    const filteredGames = this.state.games.filter((game:any)=>{
+      return game.name.toLocaleLowerCase().includes(this.state.searchField)
+     })
+     console.log(filteredGames)
     return(
       <div className="App">
+        <input type='search' placeholder='Search By Platfor' onChange={(event)=>{
+          const searchField = event.target.value.toLocaleLowerCase()
+ 
+          this.setState(()=>{
+            return{searchField}
+          })
+        }}/>
         {
-          this.state.games.map((platform:any)=>{
+          filteredGames.map((platform:any)=>{
             return <div>
                 <h1>platform:{platform.name}</h1>
                 {
