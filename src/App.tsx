@@ -19,21 +19,25 @@ class App extends Component <any , any>{
     .then(response=>this.setState(()=> {return {games:response.results}}))
   }
 
-  render(){
+  onSearchChange =(event:any)=>{
+    const searchField = event.target.value.toLocaleLowerCase()
 
-    const filteredGames = this.state.games.filter((game:any)=>{
-      return game.name.toLocaleLowerCase().includes(this.state.searchField)
+    this.setState(()=>{
+      return{searchField}
+    })
+  }
+
+  render(){
+    const {games , searchField} = this.state
+    const {onSearchChange} = this
+    //we need to filter from full list everytiome so we cant use setState to change the actual value
+    const filteredGames = games.filter((game:any)=>{
+      return game.name.toLocaleLowerCase().includes(searchField)
      })
      console.log(filteredGames)
     return(
       <div className="App">
-        <input type='search' placeholder='Search By Platfor' onChange={(event)=>{
-          const searchField = event.target.value.toLocaleLowerCase()
- 
-          this.setState(()=>{
-            return{searchField}
-          })
-        }}/>
+        <input type='search' placeholder='Search By Platfor' onChange={onSearchChange}/>
         {
           filteredGames.map((platform:any)=>{
             return <div>
