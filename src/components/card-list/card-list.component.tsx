@@ -11,7 +11,7 @@ class CardList extends Component<any ,any>{
                 {
                     platform.map((platform:any)=>(
                     <div key={platform.id}>
-                        <h1></h1>
+                        <h1>{platform.name}</h1>
                         {
                             platform.games.map((game:any)=>(
                                 <p key={game.id}>{game.name}</p>

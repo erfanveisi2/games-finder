@@ -2,6 +2,7 @@ import React from 'react';
 import { Component } from 'react';
 import './App.css';
 import CardList from './components/card-list/card-list.component';
+import SearchBox from './components/search-box/search-box.component';
 class App extends Component <any , any>{
   constructor(){
     super(arguments)
@@ -21,9 +22,7 @@ class App extends Component <any , any>{
   onSearchChange =(event:any)=>{
     const searchField = event.target.value.toLocaleLowerCase()
 
-    this.setState(()=>{
-      return{searchField}
-    })
+    this.setState(()=>({searchField}))
   }
 
   render(){
@@ -36,7 +35,7 @@ class App extends Component <any , any>{
      })
     return(
       <div className="App">
-        <input type='search' placeholder='Search By Platfor' onChange={onSearchChange}/>
+        <SearchBox onChangeHandler={onSearchChange} placeholder='Search by platform' type='search' className='search-box'/>
         <CardList platform={filteredPlatforms}/>
       </div>
     )
