@@ -35,6 +35,7 @@ class App extends Component <any , any>{
      })
     return(
       <div className="App">
+        <h1 className='app-title'>GAME FINDER</h1>
         <SearchBox onChangeHandler={onSearchChange} placeholder='Search by platform' type='search' className='search-box'/>
         <CardList platform={filteredPlatforms}/>
       </div>
