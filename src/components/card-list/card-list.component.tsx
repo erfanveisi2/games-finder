@@ -1,23 +1,16 @@
 import { Component, ReactNode } from "react";
-
-
+import './card-list.styles.css'
+import { Card } from "../card/card.component";
 
 class CardList extends Component<any ,any>{
     render(): ReactNode {
         const {platform} = this.props
         console.log(this.props.platform)
         return(
-            <div>
+            <div className="card-list">
                 {
                     platform.map((platform:any)=>(
-                    <div key={platform.id}>
-                        <h1>{platform.name}</h1>
-                        {
-                            platform.games.map((game:any)=>(
-                                <p key={game.id}>{game.name}</p>
-                            ))
-                        }
-                    </div>
+                        <Card platform={platform}/>
                     ))
                 }
             </div>

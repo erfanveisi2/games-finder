@@ -1,0 +1,35 @@
+[33mcommit eb24e84df475d5fe5ef73b3a466cf893c65f45e7[m[33m ([m[1;36mHEAD -> [m[1;32mmain[m[33m, [m[1;31morigin/main[m[33m)[m
+Author: erv <erfanveisi2@gmail.com>
+Date:   Thu Jun 22 16:13:56 2023 +0300
+
+    CardList component completed
+
+[33mcommit a81c858451cf9e5a6a05846a8cba970c3a838426[m
+Author: erv <erfanveisi2@gmail.com>
+Date:   Wed Jun 21 15:14:27 2023 +0300
+
+    just basic optimizations
+
+[33mcommit 88b5a16733aea1285ccfdb30cbed3928d5c23324[m
+Author: erv <erfanveisi2@gmail.com>
+Date:   Wed Jun 21 12:28:25 2023 +0300
+
+    searchfield completed
+
+[33mcommit bc5003ac817796085371f60c724f9ac661c2ed3b[m
+Author: erv <erfanveisi2@gmail.com>
+Date:   Wed Jun 21 01:25:08 2023 +0300
+
+    mapping content completed
+
+[33mcommit 3aab04f3d3ec3b50e8fd8e33dc55d51422082139[m
+Author: erv <erfanveisi2@gmail.com>
+Date:   Wed Jun 21 00:20:29 2023 +0300
+
+    API fetching completed
+
+[33mcommit eaa6275c7b0c70714dd4708bad388e7ad9b131b3[m
+Author: erv <erfanveisi2@gmail.com>
+Date:   Tue Jun 20 22:55:15 2023 +0300
+
+    Initialize project using Create React App
